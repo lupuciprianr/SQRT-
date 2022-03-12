@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css" integrity="sha512-B0mpFwHOmRf8OK4U2MBOhv9W1nbPw/i3W1nBERvMZaTWd3+j+blGbOyv3w1vJgcy3cYhzwgw1ny+TzWICN35Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body>
+
+  <div class="header normal-text">
+    <logo><img src="sqrt.png" alt="Image" height="50" width="150"></logo>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Programma C++.html">Programma C++</a></li>
+      <li><a href="Dati.html">Dati</a></li>
+      <li><a href="Screenshots.html">Screenshots</a></li>
+      <li><a href="Grafici.html">Grafici</a></li>
+      <li><a href="Osservazioni.html">Osservazioni</a></li>
+    </ul>
+    <div class="cta">
+      <a href="Lupu.html" class="button">Roberto Lupu</a>
+    </div>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+<div class="hero hero--small">
+  <div class="hero__content reveal">
+    <h1 class="animate__animated animate__bounce big-text">Info - Roberto Lupu</h1>
+  </div>
+  <video autoplay muted loop id="video">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+
+<div class="bg-cover mt-2 ">
+  <div class="bg-cover__paragraph reveal">
+
+    <h4 class="mid-text tc-y">Cognome:   Lupu</h4>
+    <h4 class=" mid-text tc-y">Nome:   Ciprian-Roberto</h4>
+    <h4 class="mid-text tc-y">Età:    19</h4>
+    <h4 class="mid-text tc-y">Scuola:   Liceo Statale XXV Aprile</h4>
+    <h4 class="mid-text tc-y">Classe:    5CSA</h4>
+    <h4 class="mid-text tc-y">Anno Scolastico: 2021-2022</h4>
+    <h4 class="mid-text tc-y">E-mail:   lupuciprianr@liceoxxv.edu.it</h4>
+    <h4 class="mid-text tc-y">Cellulare:   3337416287</h4>
+  </div>
+</div>
+
+<footer class="footer ">
+<div class="grid">
+  <div class="col reveal">
+    <h4 class="mn-text tw ">Creator</h4>
+    <a href="Lupu.html" class="toggle vh footer-text td-u tc-a">Roberto Lupu</a>
+  </div>
+  <div class="col reveal">
+    <h4 class="mn-text tw ">Title</h4>
+    <a href="More.html" class="toggle vh footer-text td-u tc-a">Radice Quadrata</a>
+  </div>
+  <div class="col reveal">
+    <h4 class="mn-text tw ">Objective</h4>
+    <a href="index.html" class="toggle vh footer-text td-u tc-a">Aproximative Result of SQRT()</a>
+  </div>
+  <div class="col reveal">
+    <h4 class="mn-text tw ">Programm Status</h4>
+    <a href="Programma C++.html" class="toggle vh footer-text td-u tc-a">Functional</a>
+  </div>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js" integrity="sha512-+m9auGg9ZwnDc37W8RSsLhzKBLVOYsf5BKzSpYrYhQQk6hItXOhBFKHuHbMCpoABCUO6l4HVK+dFwxMIME3E7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  $( document ).ready(function() {
+
+    /* Open Panel */
+    $( ".hamburger" ).on('click', function() {
+      $(".menu").toggleClass("menu--open");
+    });
+  });
+
+  ScrollReveal().reveal('.reveal', { distance: '70px', duration:1750, easing: 'cubic-bezier(.215, .61, .355, 1)',interval: 600 });
+
+  ScrollReveal().reveal('.zoom', { duration:1750, easing: 'cubic-bezier(.215, .61, .355, 1)',interval: 200, scale: 0.65, mobile:false});
+
+
+</script>
+
+</body>
+</html>

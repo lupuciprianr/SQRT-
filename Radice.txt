@@ -1,0 +1,356 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <Windows.h>                                
+#define EPS 0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001  
+#include <ctime>
+using namespace std;                
+
+void SetColor(unsigned short color)     /////////// change color
+{
+    HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hCon,color);
+}
+
+void loading()	/////////////////////////////////////////////////////////// LOADING SCREEN
+{
+	system("cls");
+					SetColor(14);
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n   Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n     Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n       Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n         Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n           Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n             Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n               Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                 Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                   Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                     Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                       Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                         Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                           Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                             Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                   Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                      Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                         Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                                            Loading..."<<endl;
+					Sleep(0200);
+					system("cls");
+					SetColor(7);
+}
+
+// alg. Erone
+double radice_q(double num, int iterazioni)  //////////////////////////////////////////////77 RAD QUAD
+{
+  double Q, QPrec, errore, precisione, differenza;
+  int n, esci = 0;
+  QPrec = num / 2;
+  for(n = 0; n < iterazioni && !esci; n++)
+  {
+    Q = (QPrec + num / QPrec) / 2;  
+    errore = fabs((Q - QPrec) / Q);  
+    if(errore < EPS)                  
+      esci = 1;
+    else QPrec = Q;
+    {
+    	if(n==0)
+    		{
+    		SetColor(13);
+			cout<<"\n\t\t\t\t\t\tCALCOLO BABILONESE";
+			SetColor(7);
+			}
+	precisione = (sqrt(num)/Q)*100;
+	differenza = Q-sqrt(num);
+    cout<<"\n\nRisultato "<<n+1<<": "<<Q<<"    \n\t\t\tDIFFERENZA: "<<differenza<<"       PRECISIONE: "<<precisione<<"%";
+    }
+  }
+  SetColor(4);
+  if(precisione=100)
+	{
+	cout<<"\nBastano "<<n-1<<" iterazioni"<<" (valore inserito: "<<iterazioni<<")"<<endl;
+	SetColor(9);	
+	}
+  else
+  	{
+	cout<<"\nIl numero di iterazioni e' troppo basso per il 100% di precisione\n";
+    SetColor(5);	
+	}
+    
+  return Q;
+}
+
+// alg. Newton1
+double radice_n(double num, int iterazioni)
+{
+	int volte=0;
+	double x=1.0;
+	for(volte=0; volte <iterazioni; volte++){
+		x=(x/2)+(num/(2*x));
+		
+	}
+	return x;
+}
+
+// alg. Newton2
+double inv_radice_n2(double num, int iterazioni)
+{
+	double x=0.01;
+	for(int volte=0; volte<iterazioni; volte++){
+		x=0.5*x*(3-num*x*x);
+	}
+	return x;
+}
+
+char time(){
+	char buffer [80];
+	time_t currentTime;
+	time(&currentTime);
+    struct tm *localTime = localtime(&currentTime);
+    SetColor(10);
+    strftime(buffer, 80, "     %I:%M%p \t\t\t\t\t\t\t\t\t\t\t\t%d/%m/%Y", localTime);
+    cout << buffer << endl;
+    SetColor(7);
+}
+main()	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////77/// MAIN
+{
+  double numero, differenza;
+  int precisione1, scelta,choice,close;
+  int MAX,iter,precision1,precision2;
+  char buffer [80];
+  
+  cout.precision(12);
+    
+  loading(); // LOADING SCREEN
+  
+time();
+  
+while(close!= 2)  /////// permette l'uso continuo del programma
+{
+   cout<<"\t\t\t\t\tCALCOLO APROSSIMATO DELLA RADICE QUADRATA\n";
+  cout<<"\nInserisci un valore reale positivo: ";
+  do
+  {
+  	 cin>>numero;
+  	 if(numero<0)
+  	 	{
+		system("cls");
+		SetColor(10);
+		time();
+    	SetColor(7);
+		cout<<"\t\t\t\t\tCALCOLO APROSSIMATO DELLA RADICE QUADRATA\n";
+		cout<<"\nIl numero inserito non e' valido!"<<endl;
+		cout<<"\nInserisci un valore reale positivo: "<<endl;
+		}	   
+  }
+  while(numero<0);
+ 
+ cout<<"\nVuoi inserire un numero massimo di iterazioni oppure vuoi utilizzare quello predefinito(20)?"<<endl;
+ SetColor(10);
+ cout<<"\n\t\t\t\t\tPERSONALIZZATO - 1"<<endl;
+ cout<<"\t\t\t\t\tPREDEFINITO - 2"<<endl;
+ SetColor(7);
+ 
+ do   // inserimento choice
+ 	{
+ 		cin>>choice;
+ 		if(choice<1 or choice>2)
+ 			{
+ 			SetColor(4);
+ 			cout<<"\nL'opzione inserita non e' valida. RIPROVA!"<<endl;
+			 SetColor(7);	
+			}	
+	 }
+while(choice<1 or choice>2);
+
+if(choice == 1)
+	{
+		cout<<"\nInserisci il numero massimo di iterazioni: ";
+		cin>>iter;
+		SetColor(9);
+		cout<<"\nIl numero massimo di iterazioni e' adesso impostato a "<<" "<<iter<<endl;
+		SetColor(7);
+		MAX = iter;
+	}
+else
+	{
+		MAX = 20;
+		SetColor(9);
+		cout<<"\nIl numero massimo di iterazioni e' adesso preimpostato a 20"<<endl;
+		SetColor(7);
+	}
+	
+cout<<"\nScegli l'operazione desiderata:"<<endl;
+SetColor(10);
+ cout<<"\t\t\t\t\tAPROSSIMATO (Babilonese) - 1"<<endl;
+ cout<<"\t\t\t\t\tPRECISO (Sqrt) - 2"<<endl;
+ cout<<"\t\t\t\t\tAPROSSIMATO e PRECISO - 3"<<endl;
+ cout<<"\t\t\t\t\tNEWTON1 - 4"<<endl;
+ cout<<"\t\t\t\t\tNEWTON2 - 5"<<endl;
+ cout<<"\t\t\t\t\tNEWTON 1 e NEWTON 2 - 6"<<endl;
+ cout<<"\t\t\t\t\tTUTTE LE OPERAZIONI - 7"<<endl;
+ SetColor(7);
+ do   // inserimento scelta
+ 	{
+ 		cin>>scelta;
+ 		if(scelta<1 or scelta>7)
+ 			cout<<"\nL'opzione inserita non e' valida. RIPROVA!"<<endl;
+	 }
+while(scelta<1 or scelta>7);
+
+	precision1=(sqrt(numero)/radice_n(numero,MAX))*100;
+	precision2=(sqrt(numero)/(1/(inv_radice_n2(numero,MAX)))*100);
+ switch(scelta)
+ {
+ 	case 1:
+ 		{
+ 		system("cls");
+		time();
+ 		SetColor(1);
+ 		cout<<"\nRisultato approssimato: "<<radice_q(numero,MAX)<<"   (DIFFERENZA: "<<(radice_q(numero,MAX)-sqrt(numero))<<")";
+ 		SetColor(7);
+ 		break;
+		}
+	case 2:
+		{
+			system("cls");
+			time();
+			SetColor(5);
+			cout<<"\n\t\t\t\t\tCALCOLO RADICE - Utilizzo di SQRT()"<<endl;
+			SetColor(9);
+			cout<<" \nRisultato preciso(SQRT): "<<sqrt(numero);
+			break;
+		}
+	case 3:
+		{
+		system("cls");
+		time();
+		SetColor(9);
+		cout<<"\nRisultato approssimato: "<<radice_q(numero,MAX);
+		cout<<"\n\n------------------------------------------------------------------------------------------------------------------------"<<endl;
+		cout<<" \nRisultato preciso(SQRT): "<<sqrt(numero);	
+		break;
+		}
+	case 4:
+		{
+		system("cls");
+		time();
+		SetColor(5);
+		cout<<"\n\t\t\t\t\tCALCOLO RADICE - Utilizzo di Newton1"<<endl;
+		SetColor(9);
+		cout <<"\n\nCalcolo Newton1: " << radice_n(numero,MAX);
+		SetColor(7);
+		cout<<"		(Precisione: "<<precision1<<"%)"<< endl << "Differenza Newton = "<<radice_n(numero,MAX)-sqrt(numero) <<endl;
+		break;
+		}
+	case 5:
+		{
+		system("cls");
+		time();
+		SetColor(5);
+		cout<<"\n\t\t\t\t\tCALCOLO RADICE - Utilizzo di Newton2"<<endl;
+		SetColor(9);
+		cout <<"\n\nCalcolo Newton2: "<< 1/(inv_radice_n2(numero,MAX));
+		SetColor(7);
+		cout<<"		(Precisione: "<<precision2<<"%)"<<endl << "Differenza Newton2 = " << fabs(1/inv_radice_n2(numero,MAX)-sqrt(numero))<<endl;
+		break;
+		}
+	case 6:
+		{
+		system("cls");
+		time();
+			SetColor(5);
+		cout<<"\n\t\t\t\t\tCALCOLO RADICE - Utilizzo di Newton1"<<endl;
+		SetColor(9);
+		cout <<"\n\nCalcolo Newton1: " << radice_n(numero,MAX);
+		SetColor(7);
+		cout<<"		(Precisione: "<<precision1<<"%)"<< endl << "Differenza Newton = "<<radice_n(numero,MAX)-sqrt(numero) <<endl;;
+		cout<<"\n\n------------------------------------------------------------------------------------------------------------------------"<<endl;
+		SetColor(5);
+		cout<<"\n\t\t\t\t\tCALCOLO RADICE - Utilizzo di Newton2"<<endl;
+		SetColor(9);
+		cout <<"\n\nCalcolo Newton2: "<< 1/(inv_radice_n2(numero,MAX));
+		SetColor(7);
+		cout<<"		(Precisione: "<<precision2<<"%)"<<endl << "Differenza Newton2 = " << fabs(1/inv_radice_n2(numero,MAX)-sqrt(numero))<<endl;
+		break;
+		}
+	case 7:
+		{
+		system("cls");
+		time();
+		SetColor(9);
+		cout<<"\nRisultato approssimato: "<<radice_q(numero,MAX);
+		SetColor(14);
+		cout<<"\n\n------------------------------------------------------------------------------------------------------------------------"<<endl;		
+		SetColor(9);
+		cout<<" \nRisultato preciso(SQRT): "<<sqrt(numero);
+		SetColor(14);
+		cout<<"\n\n------------------------------------------------------------------------------------------------------------------------"<<endl;
+		SetColor(9);
+		cout <<"\n\nCalcolo Newton1: " << radice_n(numero,MAX);
+		SetColor(7);
+		cout<<"		(Precisione: "<<precision1<<"%)"<< endl << "Differenza Newton = "<<radice_n(numero,MAX)-sqrt(numero) <<endl;
+		SetColor(14);
+		cout<<"\n\n------------------------------------------------------------------------------------------------------------------------"<<endl;		SetColor(9);
+		cout <<"\n\nCalcolo Newton2: "<< 1/(inv_radice_n2(numero,MAX));
+		SetColor(7);
+		cout<<"		(Precisione: "<<precision2;
+		if(precision2<0)
+			cout<<"%) - non preciso"<<endl << "Differenza Newton2 = " << fabs(1/inv_radice_n2(numero,MAX)-sqrt(numero))<<endl;		
+		else
+			cout<<"%)"<<endl << "Differenza Newton2 = " << fabs(1/inv_radice_n2(numero,MAX)-sqrt(numero))<<endl;
+		}
+ }  // fine switch case
+  
+  SetColor(14);
+  cout<<"\n------------------------------------------------------------------------------------------------------------------------"<<endl; 
+  SetColor(2);
+  cout<<"Vuoi continuare ad usare la calcolatrice?"<<endl;
+  cout<<"SI - 1"<<endl;
+  cout<<"NO - 2"<<endl;
+  SetColor(7);
+  cin>>close;
+  if(close==1)
+  	system("cls");	
+}  // fine ciclo WHILE
+  
+} // fine main

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css" integrity="sha512-B0mpFwHOmRf8OK4U2MBOhv9W1nbPw/i3W1nBERvMZaTWd3+j+blGbOyv3w1vJgcy3cYhzwgw1ny+TzWICN35Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body>
+
+  <div class="header normal-text">
+    <logo><img src="sqrt.png" alt="Image" height="50" width="150"></logo>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Programma C++.html">Programma C++</a></li>
+      <li><a href="Dati.html">Dati</a></li>
+      <li><a href="Screenshots.html">Screenshots</a></li>
+      <li><a href="Grafici.html">Grafici</a></li>
+      <li><a href="Osservazioni.html">Osservazioni</a></li>
+    </ul>
+    <div class="cta">
+      <a href="Lupu.html" class="button">Roberto Lupu</a>
+    </div>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+<div class="hero hero--small">
+  <div class="hero__content">
+    <h1 class="animate__animated animate__shakeY big-text">Calcolo Radice Quadrata</h1>
+  </div>
+  <video autoplay muted loop id="video">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="bg-cover mt-3 ">
+  <div class="bg-cover__paragraph reveal">
+    <h4 class="mid-text tc-y">Cenni sul calcolo numerico</h4>
+    <p class="tc-l">La matematica svolge un ruolo determinante nell’analisi dei problemi del mondo reale e il pro-cesso di soluzione associa al problema reale un modello matematico che ne approssima la soluzione: molto spesso, però il modello matematicoche si ottiene non è esprimibile con funzioni elementari, ma con sistemi complessi che richiedono l’uso di metodi di calcolo approssimato: questi metodi prendono il nome di metodi di calcolo numerico. Sono caratterizzati da algoritmi che consentono di ottenere una soluzione del problema in forma approssimata (con il grado di precisione generalmente legato al numero delle iterazioni e quindial tempo di calcolo) del problema specifico producendo un valore altrimenti impossibile da determinare con metodi algebrici.
+</p>
+    <p class="tc-l">Lo schema di calcolo è generalmente abbastanza semplice ma richiede numerosi passaggi ripetitivi e il calcolatore si presta bene alla loro esecuzione.</p>
+    <p class="tc-l">Il calcolo  approssimatoviene  utilizzato  sia  quando  non  esistono  algoritmi esattidi  risoluzione,  sia  quando  gli  algoritmi  esatti  non  sono  efficientiavendo un alto costo computazionale in termini di tempo o di memoria; inoltre  gli  algoritmi  numerici  approssimati  si  sono  dimostrati  in  grado  dicalcolare approssimazioni delle soluzioni con maggiore velocità e precisione rispetto ad algoritmi derivati dal metodo algebrico esatto.In alcuni casi, pur esistendo algoritmi algebrici per la determinazione di soluzioni  esatte,  la  dimensione  del  problema  rende  comunque  necessario  il ricorso a un programma di calcolo: si pensi ad esempio alla ricerca della soluzione di un sistema lineare composto da molte equazioni e molte incognite (in  natura  molti  problemi  reali  hanno  come  modello  matematico  sistemi lineari con centinaia di equazioni e centinaia di incognite!). Le tecniche utilizzate dagli algoritmi approssimanti , o algoritmi euristici, si basano su:<br/><p class="tc-y mb-o">– discretizzazione: passaggio da domini continui a domini discreti;</p><p class="tc-y mt-0">– approssimazioni successive: metodi iterativi.</p>
+  </div>
+</div>
+
+
+
+
+<footer class="footer ">
+<div class="grid">
+  <div class="col reveal">
+    <h4 class="mn-text tw ">Creator</h4>
+    <a href="Lupu.html" class="toggle vh footer-text td-u tc-a">Roberto Lupu</a>
+  </div>
+  <div class="col reveal">
+    <h4 class="mn-text tw ">Title</h4>
+    <a href="More.html" class="toggle vh footer-text td-u tc-a">Radice Quadrata</a>
+  </div>
+  <div class="col reveal">
+    <h4 class="mn-text tw ">Objective</h4>
+    <a href="index.html" class="toggle vh footer-text td-u tc-a">Aproximative Result of SQRT()</a>
+  </div>
+  <div class="col reveal">
+    <h4 class="mn-text tw ">Programm Status</h4>
+    <a href="Programma C++.html" class="toggle vh footer-text td-u tc-a">Functional</a>
+  </div>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js" integrity="sha512-+m9auGg9ZwnDc37W8RSsLhzKBLVOYsf5BKzSpYrYhQQk6hItXOhBFKHuHbMCpoABCUO6l4HVK+dFwxMIME3E7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  $( document ).ready(function() {
+
+    /* Open Panel */
+    $( ".hamburger" ).on('click', function() {
+      $(".menu").toggleClass("menu--open");
+    });
+  });
+
+  ScrollReveal().reveal('.reveal', { distance: '70px', duration:1750, easing: 'cubic-bezier(.215, .61, .355, 1)',interval: 600 });
+
+  ScrollReveal().reveal('.zoom', { duration:1750, easing: 'cubic-bezier(.215, .61, .355, 1)',interval: 200, scale: 0.65, mobile:false});
+
+
+</script>
+
+</body>
+</html>
